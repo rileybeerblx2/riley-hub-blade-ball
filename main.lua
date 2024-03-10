@@ -8,16 +8,14 @@ Bladeball:CreateToggle("Auto Parry", function()loadstring(game:HttpGet("https://
   end)
 
 Bladeball:CreateToggle("Auto Parry V2", function()getgenv().config = getgenv().config or {
-    hit_time = 0.85, -- // recommended 0.25 to 0.75 \ --
+    hit_time = 0.75, -- // recommended 0.25 to 0.75 \ --
     
     mode = 'Always', -- // Hold , Toggle , Always \ --
     deflect_type = 'Remote', -- // Key Press , Remote \ --
     notifications = true,
     keybind = Enum.KeyCode.V
 }
-Bladeball:CreateToggle("Auto Parry V3", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Code4Zaaa/X7Project/main/Game/AutoParryOnly",true))()
-  end)
-    
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
 end)
 
@@ -32,7 +30,7 @@ end)
 
 local Bladeball = PhantomForcesWindow:NewSection("Aim & Spam")
 
-Bladeball:CreateToggle("Hold To Spam",
+Bladeball:CreateButton("Hold To Spam",
 function()getgenv().SpamSpeed = 9
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam",true))()
   end) 
@@ -47,3 +45,8 @@ function()loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
 
 Bladeball:CreateToggle("Auto Clash V2", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/datshort1/datmodhub/main/AutoClash"))()
 end)
+
+local Bladeball = PhantomForcesWindow:NewSection("Auto Parry V3 & Other")
+
+Bladeball:CreateButton("Auto Parry V3", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Code4Zaaa/X7Project/main/Game/AutoParryOnly",true))()
+  end)
