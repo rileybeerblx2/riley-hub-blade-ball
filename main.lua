@@ -28,11 +28,6 @@ end)
 Bladeball:CreateToggle("Auto Detect V1", function ()loadstring(game:HttpGet(('https://pastebin.com/raw/HPNBFGSf'),true))()
 end)
 
-Bladeball:CreateButton("Toggle Block Spam", function()game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "UNC Summary",
-    Text = "UNC Summary - ✅ Tested with a 99% success rate - ⛔️ 1 tests failed - ⚠️ 0 globals are missing aliases",
-    Duration = 5
-
 local Bladeball = PhantomForcesWindow:NewSection("Aim & Spam")
 
 Bladeball:CreateButton("Hold To Spam",
