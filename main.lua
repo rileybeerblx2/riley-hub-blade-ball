@@ -15,7 +15,7 @@ Bladeball:CreateToggle("Auto Parry V2", function()getgenv().config = getgenv().c
     notifications = true,
     keybind = Enum.KeyCode.V
 }
-Bladeball:CreateButton("Auto Parry V3", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Code4Zaaa/X7Project/main/Game/AutoParryOnly",true))()
+Bladeball:CreateToggle("Auto Parry V3", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Code4Zaaa/X7Project/main/Game/AutoParryOnly",true))()
   end)
     
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
