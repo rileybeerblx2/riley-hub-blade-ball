@@ -8,7 +8,7 @@ Bladeball:CreateToggle("Auto Parry", function()loadstring(game:HttpGet("https://
   end)
 
 Bladeball:CreateToggle("Auto Parry V2", function()getgenv().config = getgenv().config or {
-    hit_time = 0.75, -- // recommended 0.25 to 0.75 \ --
+    hit_time = 0.85, -- // recommended 0.25 to 0.75 \ --
     
     mode = 'Always', -- // Hold , Toggle , Always \ --
     deflect_type = 'Remote', -- // Key Press , Remote \ --
@@ -29,19 +29,9 @@ Bladeball:CreateToggle("Auto Detect V1", function ()loadstring(game:HttpGet(('ht
 end)
 
 Bladeball:CreateButton("Toggle Block Spam", function()game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "Script by Hosvile",
-    Text = "Hold Block button to Spam",
+    Title = "UNC Summary",
+    Text = "UNC Summary - ✅ Tested with a 99% success rate - ⛔️ 1 tests failed - ⚠️ 0 globals are missing aliases",
     Duration = 5
-})
-
-getgenv().SpamSpeed = 25 -- 1-25
-
-if not getgenv().exeSpam then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/Toggle%20Block%20Spam",true))()
-end
-
-getgenv().exeSpam = true
-  end)
 
 local Bladeball = PhantomForcesWindow:NewSection("Aim & Spam")
 
