@@ -15,8 +15,11 @@ Bladeball:CreateToggle("Auto Parry V2", function()getgenv().config = getgenv().c
     notifications = true,
     keybind = Enum.KeyCode.V
 }
-
+    
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+end)
+
+Bladeball:CreateButton("Auto Parry V3", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/autoparrybest"))()
 end)
 
 Bladeball:CreateToggle("Auto Spam V1", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/DonGabrielle/AutoDetectV4/main/MainBalls"))()
