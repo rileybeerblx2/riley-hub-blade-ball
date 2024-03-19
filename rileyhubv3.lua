@@ -102,17 +102,7 @@ local Toggle = Tab:CreateToggle({
    CurrentValue = false,
    Flag = "Auto Parry V2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-  getgenv().config = getgenv().config or {
-    hit_time = 0.75, -- // recommended 0.25 to 0.75 \ --
-    
-    mode = 'Always', -- // Hold , Toggle , Always \ --
-    deflect_type = 'Remote', -- // Key Press , Remote \ --
-    notifications = true,
-    keybind = Enum.KeyCode.V
-}
-    
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
-end)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Code4Zaaa/X7Project/main/Game/AutoParryOnly",true))()
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
@@ -122,125 +112,11 @@ local Toggle = Tab:CreateToggle({
    CurrentValue = false,
    Flag = "Auto Parry V3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-   -- Auto Parry Only!
-local services = setmetatable({}, { __index = function(self, key)
-    local service = game:GetService(key)
-    self[key] = service
-    return service
-end })
-
-local Players = services.Players
-local Workspace = services.Workspace
-
-local client = Players.LocalPlayer
-
-local ballsFolder = Workspace.Balls
-
-local Util = {}
-do
-    shared.Util = Util
-
-    function Util.getBalls()
-        local realBall, otherBall
-
-        for i = 1, #ballsFolder:GetChildren() do
-            local ball = ballsFolder:GetChildren()[i]
-            if not ball:IsA("BasePart") then continue end
-
-            local isRealBall = ball:GetAttribute("realBall")
-            if isRealBall == nil then continue end
-
-            if isRealBall then
-                realBall = ball
-            else
-                otherBall = ball
-            end
-
-            if realBall and otherBall then break end
-        end
-
-        return realBall, otherBall
-    end
-
-    function Util.isHunting()
-        local realBall = Util.getBalls()
-        if not realBall then return false end
-
-        local target = realBall:GetAttribute("target")
-        if not target then return false end
-
-        return target == client.Name
-    end
-end
-
-ballsFolder.ChildAdded:Connect(function()
-    print('------------------- Ball Spawned -------------------')
-
-    task.wait(1.5)
-
-    local realBall, fakeBall
-
-    for i = 1, #ballsFolder:GetChildren() do
-        local ball = ballsFolder:GetChildren()[i]
-        if not ball:IsA("BasePart") then continue end
-
-        local currentSpeed = ball.Velocity.Magnitude
-        if currentSpeed == 0 then
-            realBall = ball
-        else
-            fakeBall = ball
-        end
-
-        if realBall and fakeBall then break end
-    end
-
-    if realBall then
-        local usedRemote = false
-        local lastPosition = realBall.Position
-        local lastVelocity = fakeBall.Velocity
-
-        realBall:GetPropertyChangedSignal("Position"):Connect(function()
-            if not Util.isHunting() then return end
-
-            local playerPosition = client.Character and client.Character.PrimaryPart and client.Character.PrimaryPart.Position
-            if not playerPosition then return end
-
-            local currentSpeed = fakeBall and fakeBall.Velocity.Magnitude or 0
-
-            local predictedPosition = lastPosition + lastVelocity
-            local predictedDistance = (predictedPosition - playerPosition).Magnitude
-
-            lastPosition = realBall.Position
-            lastVelocity = realBall.Velocity
-
-            local timeToReachPlayer = predictedDistance / (currentSpeed == 0 and 1 or currentSpeed)
-            print(timeToReachPlayer)
-
-            if timeToReachPlayer <= 0.3 and not usedRemote then
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes", 9e9):WaitForChild("ParryButtonPress"):Fire()
-                task.wait(0.1)
-                usedRemote = true
-            elseif timeToReachPlayer > 0.4 then
-                usedRemote = false
-            end
-        end)
-    end
-end)
-wait(1)
-local NofiticationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nadir3709/Notification/main/NotificationHolder"))()
-local Nofitication = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nadir3709/Notification/main/Notification"))()
-
-local function Notify(Title, Text, Time)
-    Nofitication:Notify(
-        {Title = Title, Description = Text},
-        {OutlineColor = Color3.fromRGB(100, 100, 100),Time = Time or 5, Type = "default"} --[[default, option, image]]
-    )
-end
-Notify("Notification", "Auto Parry Actived!")
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Code4Zaaa/X7Project/main/Game/AutoParryOnly",true))()
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
-
+			
 local Tab = Window:CreateTab("Auto Spam & Auto Detect", 4483362458) -- Title, Image
 
 local Section = Tab:CreateSection("Auto Spam & Auto Detect")
