@@ -88,9 +88,9 @@ Rayfield:Notify({
 })
 
 local Toggle = Tab:CreateToggle({
-   Name = "Auto Player V1",
+   Name = "Auto Parry V1",
    CurrentValue = false,
-   Flag = "Auto Player V1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "Auto Parry V1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry",true))()
    -- The variable (Value) is a boolean on whether the toggle is true or false
@@ -117,8 +117,6 @@ local Toggle = Tab:CreateToggle({
    end,
 })
 			
-local Tab = Window:CreateTab("Auto Spam & Auto Detect", 4483362458) -- Title, Image
-
 local Section = Tab:CreateSection("Auto Spam & Auto Detect")
 
 local Toggle = Tab:CreateToggle({
@@ -150,8 +148,6 @@ local Toggle = Tab:CreateToggle({
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
-
-local Tab = Window:CreateTab("Aim & Spam", 4483362458) -- Title, Image
 
 local Section = Tab:CreateSection("Aim & Spam")
 
@@ -192,8 +188,6 @@ local Toggle = Tab:CreateToggle({
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
-
-local Tab = Window:CreateTab("Auto Parry V3 & V4", 4483362458) -- Title, Image
 
 local Section = Tab:CreateSection("Auto Parry V3 & V4")
 
